@@ -1,0 +1,48 @@
+{
+    "nav": {
+        "menu": {
+            "lang": "Idiomas"
+        }
+    },
+    "hero": {
+        "copy": "2 anos de experiência prática criando aplicações web com Node.js, React.js e Next.js. Hábil em arquitetar softwares eficientes e escaláveis que entregam interações fluidas com o usuário."
+    },
+    "work": {
+        "title": "Projetos",
+        "projects": [
+            {
+                "slug": "crm",
+                "title": "CRM",
+                "description": "Software de CRM poderoso feito sob medida para e-commerce. Aproveita a habilidade do React.js para experiências front-end perfeitas, o D3.js para visualizações dinâmicas e o Node.js para funcionalidade robusta no back-end. Impulsiona o crescimento do negócio e otimiza a gestão de clientes com facilidade.",
+                "stack": [
+                    "javascript",
+                    "mysql",
+                    "node",
+                    "react",
+                    "d3"
+                ],
+                "action": "Destaques"
+            },
+            {
+                "slug": "blog",
+                "title": "Blog",
+                "description": "Um blog pessoal construído com Next.js para uma rápida responsividade e MDX para uma experiência de leitura altamente interativa.",
+                "stack": [
+                    "javascript",
+                    "aws",
+                    "next",
+                    "mdx"
+                ],
+                "action": "Destaques"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Entre em Contato",
+        "text": "Eu esto aberto para novas oportunidades no momento, então se minhas habilidades e experiência estão de acordo com o que você precisa para seu projeto, por favor, sinta-se à vontade para entrar em contato. Ou se você apenas quiser bater um papo, tudo bem, também. Retornarei o contato assim que possível.",
+        "button": "Contato"
+    },
+    "footer": {
+        "location": "São Paulo, Brasil"
+    }
+}

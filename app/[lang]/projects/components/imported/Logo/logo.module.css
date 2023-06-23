@@ -1,0 +1,62 @@
+.logo_wrapper {
+    position: relative;
+    width: 70px;
+    height: 200px;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+.logo #V {
+    fill: #f00;
+}
+
+.logo #A {
+    fill: #fff;
+}
+
+.logo .handles {
+    stroke: #000;
+    stroke-width: 3.64898;
+}
+
+.logo .contour {
+    stroke: #000;
+    stroke-width: 3.17303;
+}
+
+.logo .contour #inner {
+    fill: transparent;
+}
+
+#matrix {
+    margin: 1em auto;
+    background: #000;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 22px;
+    margin-left: auto;
+    margin-right: auto;	
+    -moz-clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%);
+    -webkit-clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%);
+    clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%);
+}
+
+@media (prefers-reduced-motion) {
+    #matrix {
+        display: none;
+    }
+}
+
+@supports (not (clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%))) and (not (-webkit-clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%))) and (not (-moz-clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%))) {
+    #matrix {
+        display: none;
+    }
+  }

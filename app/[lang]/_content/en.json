@@ -1,0 +1,48 @@
+{
+    "nav": {
+        "menu": {
+            "lang": "Languages"
+        }
+    },
+    "hero": {
+        "copy": "2 years of hands-on experience creating web apps with Node.js, React.js, and Next.js. Adept at architecting efficient and scalable software that deliver seamless user interactions."
+    },
+    "work": {
+        "title": "My Work",
+        "projects": [
+            {
+                "slug": "crm",
+                "title": "CRM",
+                "description": "Powerful CRM software tailor-made for e-commerce. Harnessing the prowess of React.js for seamless front-end experiences, D3.js for dynamic visualizations, and Node.js for robust back-end functionality. It helps the business drive growth and streamline customer management with ease.",
+                "stack": [
+                    "javascript",
+                    "mysql",
+                    "node",
+                    "react",
+                    "d3"
+                ],
+                "action": "Highlights"
+            },
+            {
+                "slug": "blog",
+                "title": "Blog",
+                "description": "A personal blog built with Next.js for fast responsiveness and MDX for a highly interactive reading experience.",
+                "stack": [
+                    "javascript",
+                    "aws",
+                    "next",
+                    "mdx"
+                ],
+                "action": "Highlights"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Reach Out",
+        "text": "I'm currently open for work, so if my skills and experience are in line with what you need for your project, please feel free to reach out. Or if you just want to have a chat, it's okay, too. I'll get back to you as soon as possible.",
+        "button": "Contact Me"
+    },
+    "footer": {
+        "location": "São Paulo, Brazil"
+    }
+}

@@ -1,0 +1,28 @@
+.languages_wrapper {
+    position: relative;
+}
+
+.language_button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.languages_menu {
+    display: none;
+}
+
+.languages_menu_active {
+    width: 100px;
+    position: absolute;
+    text-align: end;
+    right: -.9em;
+    top: 2em;
+    display: block;
+}
+
+.languages_menu_active button {
+    margin-block-end: .6em;
+}
