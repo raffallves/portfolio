@@ -10,10 +10,16 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.4.0",
+    "@juggle/resize-observer": "^3.4.0",
+    "d3-array": "^3.2.4",
+    "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
+    "d3-time-format": "^4.1.0",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "negotiator": "^0.6.3",
     "next": "13.4.4",
+    "prismjs": "^1.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

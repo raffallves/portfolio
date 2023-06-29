@@ -1,7 +1,9 @@
 .logo_wrapper {
     position: relative;
     width: 70px;
-    height: 200px;
+    height: 170px;
+    float: left;
+    margin-inline-end: 1.1em;
 }
 
 .logo {
@@ -49,6 +51,14 @@
     clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%);
 }
 
+/* Extremely Small Mobile */
+@media (max-width: 400px) {
+    .logo_wrapper {
+        float: none;
+        margin-inline-end: 0;
+    }
+}
+
 @media (prefers-reduced-motion) {
     #matrix {
         display: none;
@@ -59,4 +69,4 @@
     #matrix {
         display: none;
     }
-  }
+}

@@ -13,9 +13,11 @@ import Languages from '../Languages/Languages'
 export default async function NavBar({ lang }) {
     const content = await getContent(lang)
     return (
-        <header>
+        <header className={styles.header}>
             <nav className={styles.nav}>
-                <Logo/>
+                <Link href={`/${lang}`}>
+                    <Logo/>
+                </Link>
                 <div className={styles.social}>
                     <Link href={'https://essays.rafalves.com/en'}>
                         <BlogIcon />

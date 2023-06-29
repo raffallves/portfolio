@@ -4,10 +4,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 1em 0 1.5em;
-  /* position: fixed; */
 }
 
-.nav > svg path {
+.nav a > svg path {
   stroke: rgb(var(--text-color-rgb));
 }
   
@@ -30,7 +29,20 @@
   }
 }
 
+@supports (position: sticky) or (position: -webkit-sticky) {
+  .header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: rgb(var(--background-rgb));
+    z-index: 2;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
+  .header {
+    background-color: rgb(var(--text-color-rgb));
+  }
   .nav > svg path {
     stroke: rgb(var(--background-rgb));
   }
