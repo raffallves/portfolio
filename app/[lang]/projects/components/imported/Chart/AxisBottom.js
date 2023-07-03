@@ -1,7 +1,7 @@
 "use client"
-import { useMemo } from 'react';
-import { scaleBand, scaleLinear, scaleUtc } from 'd3-scale';
-import { utcFormat } from 'd3-time-format';
+import { useMemo } from 'react'
+import { scaleBand, scaleLinear, scaleUtc } from 'd3-scale'
+import { utcFormat } from 'd3-time-format'
 
 export default function AxisBottom({ domain, range, scaleType }) {
     // Date parsing function

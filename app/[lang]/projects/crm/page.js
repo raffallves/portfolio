@@ -1,11 +1,17 @@
 import ChartsHighlight from "../components/highlights/ChartsHighlight/ChartsHighlight"
+import { getContent } from '../content'
 
-export default function CRM() {
+export async function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'pt' }]
+}
+
+export default async function CRM({ params: { lang } }) {
+    const content = await getContent(lang)
     return (
         <>
-            <h1>CRM</h1>
-            <p>Since this is a private project, I can't share the remote repository here, but the highlights below consist of what I think best showcases the most important things I learned from it.</p>
-            <ChartsHighlight/>
+            <h1>{content.crm.title}</h1>
+            <p>{content.crm.description}</p>
+            <ChartsHighlight content={content.crm.chart}/>
         </>
     )
 }

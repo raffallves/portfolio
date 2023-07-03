@@ -1,0 +1,32 @@
+{
+    "blog": {
+        "title": "Blog",
+        "description": "O intuito deste blog é o de eu escrever sobre assuntos que me interessam enquanto aprendo sobre eles. Se quiser vê-lo em ação, você pode clicar no primeiro link da NavBar acima. Se quiser ver o repositório com todo o código, pode clicar no segundo link e procurar pelo blog dentro do meu perfil do Github.",
+        "logo": {
+            "h2": "Logo Animado",
+            "p1": "Minha logo pessoal — a mesma que você pode ver na NavBar desta página — foi desenvolvida com as letras do meu nome em mente (a parte de baixo é um “V” e a parte de cima é um “A”), e é desenhada com SVG para manter uma boa resolução de imagem em qualquer escala possível.",
+            "p2": "Na versão da logo utilizada no blog, eu me inspirei no efeito de chuva de código do filme Matrix. Para implementá-lo, montei um contexto 2D com base no elemento HTML <canvas> que renderiza linhas de zeros e uns geradas aleatoriamente.",
+            "p3": "Também faço uso do método da API do navegador requestAnimationFrame para que o loop de animação seja performático e consuma a mínima quantidade de memória necessária.",
+            "p4": "Todo o código da animação roda dentro de um único gancho useEffect da biblioteca React, que limpa o canvas e reinicia a animação a cada nova renderização (troca de páginas, por exemplo) para manter as coisas ainda mais performáticas. O gancho useRef é utilizado para obter o elemento <canvas> diretamente do DOM e anexar a animação à ele."
+        },
+        "mdx": {
+            "h2": "Suporte para MDX",
+            "p1": "O MDX mistura as capacidades rápidas e simples de criação de conteúdo dos arquivos markdown com a interatividade fornecida pela sintaxe do jsx, permitindo a importação de componentes React e o seu uso dentro do texto padrão do markdown.",
+            "p2": "Evidentemente, isso resulta em conteúdos bastante fluidos e dinâmicos. Já que não é algo muito visual para se mostrar em um portfólio — porque cada artigo do blog pode ter seu próprio componente personalizado — é melhor mostrar a implementação em código deste destaque.",
+            "p3": "Os artigos, que estão armazenados em um bucket da AWS, são recuperados no momento do build para a geração estática do site utilizando a next-mdx-remote, como pode ser visto abaixo:",
+            "p4": "E é assim que a página renderiza o conteúdo:"
+        }
+    },
+    "crm": {
+        "title": "CRM",
+        "description": "Como este é um projeto privado, não posso compartilhar o repositório remoto aqui, mas os destaques abaixo consistem no que eu acho que melhor demonstra as coisas mais importantes que aprendi enquanto trabalhei nele.",
+        "chart": {
+            "h2": "Gráficos",
+            "p1": "Gráficos são parte essencial de qualquer sistema de CRM porque eles são a melhor maneira de se visualizar dados agregados. Com a D3.js, a visualização de dados se torna simples — essa biblioteca se baseia em SVG para construir formas, altamente escaláveis e facilmente transformáveis, de qualquer tipo.",
+            "p2": "O desafio em se usar a D3.js junto com React é que ambos precisam ter controle do DOM para executar suas funções. Um jeito simples de driblar isso seria encher o código com vários ganchos useRef, mas isso limitaria a habilidade da React para atualizar o que está sendo renderizado na tela.",
+            "p3": "Uma maneira segura de se remediar este problema é cuidar dos cálculos com a D3.js — transformando dados em coordenadas dimensionais — e deixar a responsabilidade de renderização nas mãos da React. Essa é a abordagem que eu escolhi seguir, e é como criei gráficos como o que se encontra abaixo:",
+            "p4": "Este usa dados mockados, mas o que está sendo utilizado na versão de produção da aplicação obviamente precisa buscá-los de um servidor (uma API REST que foi implementada por mim também).",
+            "p5": "Um problema desta abordagem é que muitas das funções auxiliares da biblioteca D3.js que dependem do acesso direto ao DOM têm que ser escritas do zero, como a função de geração eixos. Felizmente, não é algo muito difícil de se fazer. Para isso utilizei um gancho que conta com a API do ResizeObserver — ou sua versão em polyfill — para calcular as dimensões internas e externas do gráfico automaticamente, e depois a distância e as dimensões do eixo são derivadas do output do ResizeObserver."
+        }
+    }
+}

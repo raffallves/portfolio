@@ -1,0 +1,32 @@
+{
+    "blog": {
+        "title": "Blog",
+        "description": "This blog is meant for me to write about the subjects that interest me as I learn them. If you want to see it in action, you can click the first link in the NavBar bar above. If you want to see the repository with the full code, you can click on the second link e search for the blog inside my Github profile.",
+        "logo": {
+            "h2": "Logo Animation",
+            "p1": "My personal logo — the same one you can see on this page’s NavBar — was designed with letters from my name in mind (the bottom part is a “V” and the top part is an “A”), and is drawn with SVG to maintain a nice image resolution at any scale.",
+            "p2": "In the blog’s version of the logo, I got inspired by the code rain effect from The Matrix. To make that work, I leveraged the html <canvas/> element by using a 2D context that renders randomly generated lines of ones and zeroes in a loop.",
+            "p3": "I also used the requestAnimationFrame method from the browser API so that the animation loop is performant and consumes the least amount of memory necessary.",
+            "p4": "The whole animation code is run inside a useEffect hook from the React library, which cleans up the canvas and restarts the animation at every rerender (switching pages, for example) to keep things even more performant. The useRef hook is used to get the <canvas/> element directly from the DOM and attach the animation behavior to it."
+        },
+        "mdx": {
+            "h2": "MDX Support",
+            "p1": "MDX merges the fast and simple content creation capabilities of markdown files with the interactivity provided by the jsx syntax, allowing the import of React components and their use inside regular markdown text.",
+            "p2": "Needless to say, this allows for very fluid and dynamic web content. Since it’s not exactly a very visual thing to showcase in a portfolio — because every blog article can have its own custom component — it’s better to just show the code implementation for this one.",
+            "p3": "The articles, which are stored in an AWS S3 bucket, are fetched at build time for static site generation using next-mdx-remote, as can be seen below:",
+            "p4": "And this is how the page renders the content:"
+        }
+    },
+    "crm": {
+        "title": "CRM",
+        "description": "Since this is a private project, I can't share the remote repository here, but the highlights below consist of what I think best showcases the most important things I learned from it.",
+        "chart": {
+            "h2": "Charts",
+            "p1": "Charts are an essential part of any CRM system because they’re the best way to visualize aggregated data. With D3.js, data visualization becomes a breeze — it relies heavily on SVG for building highly scalable and easily transformable shapes of all types.",
+            "p2": "The challenge with using D3.js with React is that they both need control of the DOM to do their thing. One simple workaround would be to fill the code with various useRef hooks, but that would limit React’s ability to update what’s rendered on screen.",
+            "p3": "A safe compromise is to let D3.js handle the calculations — transforming data into dimensional coordinates — and leave the rendering responsibility to React. This is the approach I chose to follow, and it’s how I created charts such as the one below:",
+            "p4": "That one uses mocked data, but the one that’s used in the production app obviously needs to fetch it from a server API (a REST API that I implemented as well).",
+            "p5": "One issue with this approach is that a lot of the helper functions from the D3.js library which depend on direct access to the DOM have to be written from scratch, like the axis generator function. Thankfully, it's not such a hard thing to do. I used a hook that relies on the ResizeObserver API — or a polyfill version of it — to calculate the chart’s inner and outer dimensions automatically, and then the axis range and dimensions are derived from the ResizeObserver output."
+        }
+    }
+}

@@ -1,13 +1,20 @@
 import LogoHighlight from '../components/highlights/LogoHighlight/LogoHighlight'
 import MDXHighlight from '../components/highlights/MDXHighlight/MDXHighlight'
+import { getContent } from '../content'
 
-export default function Blog() {
+export async function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'pt' }]
+}
+
+export default async function Blog({ params: { lang } }) {
+    const content = await getContent(lang)
+    
     return (
         <>
-            <h1>Blog</h1>
-            <p>This blog is meant for me to write about the subjects that interest me as I learn them. You can see the full code by accessing the <a href='https://github.com/raffallves/blog'>remote repository.</a> If you want to see it in action, you can click the first link in the navigation bar above. </p>
-            <LogoHighlight/>
-            <MDXHighlight/>
+            <h1>{content.blog.title}</h1>
+            <p>{content.blog.description}</p>
+            <LogoHighlight content={content.blog.logo}/>
+            <MDXHighlight content={content.blog.mdx} />
         </>
     )
 }

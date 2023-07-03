@@ -1,10 +1,10 @@
 "use client"
-import { scaleUtc, scaleLinear } from "d3-scale";
-import { line } from 'd3-shape';
-import { max, extent } from 'd3-array';
-import { useChartDimensions } from "./hooks/chart";
-import AxisLeft from './AxisLeft';
-import AxisBottom from './AxisBottom';
+import { scaleUtc, scaleLinear } from "d3-scale"
+import { line } from 'd3-shape'
+import { max, extent } from 'd3-array'
+import { useChartDimensions } from "./hooks/chart"
+import AxisLeft from './AxisLeft'
+import AxisBottom from './AxisBottom'
 
 const data = [
     {date: '2023-01-01', value: 50},
@@ -30,11 +30,11 @@ export default function LineChart() {
     })
 
 
-    const xScale = scaleUtc().domain(extent(data, d => new Date(d.date))).range([0, dimensions.boundedWidth]);
-    const yScale = scaleLinear().domain([max(data, d => d.value), 0]).range([0, dimensions.boundedHeight]);
+    const xScale = scaleUtc().domain(extent(data, d => new Date(d.date))).range([0, dimensions.boundedWidth])
+    const yScale = scaleLinear().domain([max(data, d => d.value), 0]).range([0, dimensions.boundedHeight])
 
-    const linePath = line().x(d => xScale(new Date(d.date))).y(d => yScale(d.value));
-console.log(dimensions)
+    const linePath = line().x(d => xScale(new Date(d.date))).y(d => yScale(d.value))
+
     return (
         <div ref={ref} style={{height: 350}}>
             <svg width={dimensions.width} height={dimensions.height}>

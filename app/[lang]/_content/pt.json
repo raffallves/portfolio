@@ -37,6 +37,15 @@
             }
         ]
     },
+    "awards": {
+        "title": "Prêmios",
+        "awardStack": [
+            {
+                "title": "Primeiro Lugar & Melhor Código - Hackathon Citi Bank 2023",
+                "description": "Eu e minha equipe vencemos o desafio de implementar um software de validação de cobranças PIX que segue os padrões CNAB 750. Construímos uma arquitetura de microsserviços, hospedada na AWS Cloud, que é altamente escalável e pode processar mais de 100.000 pedidos por hora. Fizemos isso em apenas dois dias, e ganhamos os dois maiores prêmios."
+            }
+        ]
+    },
     "contact": {
         "title": "Entre em Contato",
         "text": "Eu esto aberto para novas oportunidades no momento, então se minhas habilidades e experiência estão de acordo com o que você precisa para seu projeto, por favor, sinta-se à vontade para entrar em contato. Ou se você apenas quiser bater um papo, tudo bem, também. Retornarei o contato assim que possível.",

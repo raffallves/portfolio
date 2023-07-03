@@ -2,6 +2,7 @@ import styles from './page.module.css'
 import Head from 'next/head'
 import Hero from './components/Hero/Hero'
 import Work from './components/Work/Work'
+import Awards from './components/Awards/Awards'
 import Contact from './components/Contact/Contact'
 
 export async function generateStaticParams() {
@@ -17,6 +18,7 @@ export default function Home({ params: { lang }}) {
       <main className={styles.main}>
         <Hero lang={lang} />
         <Work lang={lang} />
+        <Awards lang={lang}/>
         <Contact lang={lang}/>
       </main>
     </>

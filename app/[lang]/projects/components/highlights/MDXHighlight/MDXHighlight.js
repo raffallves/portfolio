@@ -4,7 +4,7 @@ import Prism from 'prismjs'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-typescript'
 
-export default function MDXHighlight() {
+export default function MDXHighlight({ content }) {
     useEffect(() => {
         Prism.highlightAll()
     }, [])
@@ -87,14 +87,14 @@ export default function MDXHighlight() {
     
     return (
         <section>
-            <h2>MDX Support</h2>
-            <p>MDX merges the fast and simple content creation capabilities of markdown files with the interactivity provided by the jsx syntax, allowing the import of React components and their use inside regular markdown text.</p>
-            <p>Needless to say, this allows for very fluid and dynamic web content. Since it’s not exactly a very visual thing to showcase in a portfolio — because every blog article can have its own custom component — it’s better to just show the code implementation for this one.</p>
-            <p>The articles, which are stored in an AWS S3 bucket, are fetched at build time for static site generation using next-mdx-remote, as can be seen below:</p>
+            <h2>{content.h2}</h2>
+            <p>{content.p1}</p>
+            <p>{content.p2}</p>
+            <p>{content.p3}</p>
             <pre className={`language-javascript`}>
                 <code className={`language-javascript`}>{snippet1}</code>
             </pre>
-            <p>And this is how the page renders the content: </p>
+            <p>{content.p4}</p>
             <pre className={`language-typescript`}>
                 <code className={`language-javascript`}>{snippet2}</code>
             </pre>

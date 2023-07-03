@@ -37,6 +37,15 @@
             }
         ]
     },
+    "awards": {
+        "title": "Awards",
+        "awardStack": [
+            {
+                "title": "First Place & Best Code - Hackathon Citi Bank 2023",
+                "description": "My team and I beat the challenge of implementing a PIX billing validator software that follows the CNAB 750 standards by building a microservices architecture, hosted on the AWS Cloud, that is highly scalable and can process more than 100,000 requests per hour. We did that in the span of two days, and won the two highest awards."
+            }
+        ]
+    },
     "contact": {
         "title": "Reach Out",
         "text": "I'm currently open for work, so if my skills and experience are in line with what you need for your project, please feel free to reach out. Or if you just want to have a chat, it's okay, too. I'll get back to you as soon as possible.",

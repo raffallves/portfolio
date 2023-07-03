@@ -1,0 +1,71 @@
+.awards_title {
+    width: 100%;
+    font-size: 3.5em;
+    text-align: center;
+    margin-block-end: 5vw;
+}
+
+.awards_wrapper {
+    margin-block-start: 4vw;
+    margin-block-end: 4vw;
+    padding: 0 25vw 0 25vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+}
+
+.awards_wrapper > div {
+    margin-block-end: 2.5em;
+}
+
+.awards_wrapper div:nth-last-child(1) {
+    margin-block-end: 0;
+}
+
+.award_title {
+    font-size: 1.5em;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 901px) and (max-width: 1170px) {
+    .awards_title {
+        font-size: 3em;
+    }
+
+    .awards_wrapper {
+        padding: 0 20vw 0 20vw;
+    }
+
+    .award_title {
+        font-size: 1.3em;
+    }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .awards_title {
+        font-size: 2.5em;
+    }
+
+    .awards_wrapper {
+        padding: 0 15vw 0 15vw;
+    }
+
+    .award_title {
+        font-size: 1.2em;
+    }
+}
+
+/* Extremely Small Mobile */
+@media (max-width: 400px) {
+    .awards_title {
+        font-size: 2.2em;
+        margin-block-end: 10vw;
+    }
+
+    .awards_wrapper {
+        margin-block-start: 8vw;
+        margin-block-end: 8vw;
+    }
+}
