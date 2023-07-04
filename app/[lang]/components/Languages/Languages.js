@@ -11,14 +11,17 @@ export default function Languages() {
     const activeLang = pathname.substring(1, 3)
     return (
         <div className={styles.languages_wrapper}>
-            <button className={styles.language_button} onClick={() => setIsActiveLang(!isActiveLang)}>
+            <button 
+            className={styles.language_button} 
+            onClick={() => setIsActiveLang(!isActiveLang)} 
+            aria-label={activeLang === 'en' ? 'Languages' : 'Idiomas'}>
                 <LanguagesIcon />
             </button>
             <div className={isActiveLang ? styles.languages_menu_active : styles.languages_menu}>
-                <Link href={`${pathname.replace(activeLang, 'en')}`} hrefLang='en'>
+                <Link href={`${pathname.replace(activeLang, 'en')}`} hrefLang='en' lang='en'>
                     <button className={styles.language_button}>English</button>
                 </Link>
-                <Link href={`${pathname.replace(activeLang, 'pt')}`} hrefLang='pt'>
+                <Link href={`${pathname.replace(activeLang, 'pt')}`} hrefLang='pt' lang='pt'>
                     <button className={styles.language_button}>Português</button>
                 </Link>
             </div>

@@ -15,17 +15,17 @@ export default async function NavBar({ lang }) {
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
-                <Link href={`/${lang}`}>
+                <Link href={`/${lang}`} aria-label='Home'>
                     <Logo/>
                 </Link>
                 <div className={styles.social}>
-                    <Link href={'https://essays.rafalves.com/en'} target='_blank' hrefLang='en'>
+                    <Link href={'https://essays.rafalves.com/en'} target='_blank' hrefLang='en' aria-label='Blog'>
                         <BlogIcon />
                     </Link>
-                    <Link href={'https://github.com/raffallves'} target='_blank'>
+                    <Link href={'https://github.com/raffallves'} target='_blank' aria-label='Github'>
                         <GithubIcon />
                     </Link>
-                    <Link href={'https://linkedin.com/in/raffallves'} target='_blank'>
+                    <Link href={'https://linkedin.com/in/raffallves'} target='_blank' aria-label='LinkedIn'>
                         <LinkedinIcon />
                     </Link>
                     <Languages />

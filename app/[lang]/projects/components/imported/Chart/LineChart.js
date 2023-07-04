@@ -36,8 +36,8 @@ export default function LineChart() {
     const linePath = line().x(d => xScale(new Date(d.date))).y(d => yScale(d.value))
 
     return (
-        <div ref={ref} style={{height: 350}}>
-            <svg width={dimensions.width} height={dimensions.height}>
+        <div ref={ref} style={{height: 350}} aria-label='Chart'>
+            <svg width={dimensions.width} height={dimensions.height} aria-hidden='true'>
                 <g transform={`translate(${[dimensions.marginLeft, dimensions.marginTop].join(',')})`}>
                     <path d={linePath(data)} fill='none' stroke='#1767de' strokeWidth={1} />
                     <g transform={`translate(${[

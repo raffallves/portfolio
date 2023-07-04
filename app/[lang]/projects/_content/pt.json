@@ -12,7 +12,7 @@
         "mdx": {
             "h2": "Suporte para MDX",
             "p1": "O MDX mistura as capacidades rápidas e simples de criação de conteúdo dos arquivos markdown com a interatividade fornecida pela sintaxe do jsx, permitindo a importação de componentes React e o seu uso dentro do texto padrão do markdown.",
-            "p2": "Evidentemente, isso resulta em conteúdos bastante fluidos e dinâmicos. Já que não é algo muito visual para se mostrar em um portfólio — porque cada artigo do blog pode ter seu próprio componente personalizado — é melhor mostrar a implementação em código deste destaque.",
+            "p2": "Evidentemente, isso resulta em conteúdos bastante fluídos e dinâmicos. Já que não é algo muito visual para se mostrar em um portfólio — porque cada artigo do blog pode ter seu próprio componente personalizado — é melhor mostrar a implementação em código deste destaque.",
             "p3": "Os artigos, que estão armazenados em um bucket da AWS, são recuperados no momento do build para a geração estática do site utilizando a next-mdx-remote, como pode ser visto abaixo:",
             "p4": "E é assim que a página renderiza o conteúdo:"
         }

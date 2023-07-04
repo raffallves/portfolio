@@ -1,6 +1,6 @@
 export default function Logo() {
     return (
-        <svg width="35" height="80" viewBox="0 0 44 97" fill="none">
+        <svg width="35" height="80" viewBox="0 0 44 97" fill="none" aria-hidden='true'>
             <path d="M34.6367 57.9786C34.6367 57.9786 36.7662 57.1147 38.3042 59.0961C39.8422 61.0775 41.9031 58.7254 41.9031 58.7254" strokeWidth="2"/>
             <path d="M2.02966 58.5875C2.02966 58.5875 3.63441 60.7569 5.89703 59.0668C8.15966 57.3768 9.7154 58.0229 9.7154 58.0229" strokeWidth="2"/>
             <path d="M22.124 3L2 58.8109L22.124 94L41.9996 58.8168L22.124 3Z" strokeWidth="2"/>

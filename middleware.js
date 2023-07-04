@@ -1,14 +1,15 @@
 import { match } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
+import parser from 'accept-language-parser'
 import { NextResponse } from 'next/server'
 
 let locales = ['en', 'pt']
 
 function getLocale(request) {
-    let languages = new Negotiator(request).languages()
-    if (languages[0] === '*') languages[0] = 'en'
-    let defaultLocale = 'en'
-    return match(languages, locales, defaultLocale)
+    const languageHeader = request.headers.get('accept-language')
+    let languages = parser.parse(languageHeader)
+    if (!languages.length || languages[0].code === '*') return locales[0]
+    
+    return match(languages.map(lang => lang.code), locales, locales[0])
 }
 
 export function middleware(request) {
@@ -23,7 +24,6 @@ export function middleware(request) {
         const locale = getLocale(request)
         // e.g. incoming request is /
         // The new URL is now /en
-        console.log('redirect')
         return NextResponse.redirect(new URL(`/${locale}`, request.url))
     }
 }

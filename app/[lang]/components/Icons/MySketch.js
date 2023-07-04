@@ -1,6 +1,6 @@
 export default function MySketch() {
     return (
-        <svg viewBox="0 0 402 402" fill="none">
+        <svg viewBox="0 0 402 402" fill="none" aria-hidden='true'>
             <mask id="mask0_17_26" maskUnits="userSpaceOnUse" x="0" y="0">
                 <circle cx="201" cy="201" r="200" stroke="black" strokeWidth="2"/>
             </mask>

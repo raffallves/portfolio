@@ -1,7 +1,7 @@
 {
     "blog": {
         "title": "Blog",
-        "description": "This blog is meant for me to write about the subjects that interest me as I learn them. If you want to see it in action, you can click the first link in the NavBar bar above. If you want to see the repository with the full code, you can click on the second link e search for the blog inside my Github profile.",
+        "description": "This blog is meant for me to write about the subjects that interest me as I learn them. If you want to see it in action, you can click the first link in the NavBar bar above. If you want to see the repository with the full code, you can click on the second link and search for the blog inside my Github profile.",
         "logo": {
             "h2": "Logo Animation",
             "p1": "My personal logo — the same one you can see on this page’s NavBar — was designed with letters from my name in mind (the bottom part is a “V” and the top part is an “A”), and is drawn with SVG to maintain a nice image resolution at any scale.",

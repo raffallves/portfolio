@@ -6,6 +6,15 @@ export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'pt' }]
 }
 
+export const metadata = {
+    title: 'Rafael Alves',
+    description: 'The Web Dev portfolio of Rafael Alves.',
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#f1f1f1' },
+      { media: '(prefers-color-scheme: dark)', color: '#332E2E' },
+    ],
+}
+
 export default async function Blog({ params: { lang } }) {
     const content = await getContent(lang)
     

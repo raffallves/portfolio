@@ -56,8 +56,8 @@ export default function Logo() {
     }, [canvasRef])
 
     return (
-        <div className={styles.logo_wrapper}>
-            <svg className={styles.logo} width="70" height="200" viewBox="-1 30 138 310" fill="none">
+        <div className={styles.logo_wrapper} aria-label='Logo'>
+            <svg className={styles.logo} width="70" height="200" viewBox="-1 30 138 310" fill="none" aria-hidden='true'>
                 <path id={styles.V} d="M69.4932 306.314L2.25546 190.11C2.25546 190.11 7.68516 195.974 15.0569 190.684C22.9836 184.997 27.9774 187.157 27.9774 187.157L69.6517 259.21L111.385 187.058C111.385 187.058 118.103 184.502 122.661 189.674C128.368 197.977 135.859 190.11 135.859 190.11L69.4932 306.314Z"/>
                 <path id={styles.A} d="M69.3943 5.02832L135.859 189.937C135.859 189.937 129.795 197.844 123.196 190.313C117.782 184.135 111.346 187.163 111.346 187.163L69.5726 72.8011L27.8389 187.163C27.8389 187.163 21.6759 185.46 15.295 190.551C7.94302 196.417 1.99805 189.937 1.99805 189.937L69.3943 5.02832Z"/>
                 <g className={styles.handles}>
