@@ -30,7 +30,7 @@ export default function AxisLeft({domain=[100, 0], range=[10, 190], scale="linea
                 {ticks.map(({ value, yOffset }) => (
                     <g key={value} transform={`translate(0, ${yOffset})`}>
                         <line x2="-6" stroke="currentColor"/>
-                        <text key={value} style={{fontSize: "10px", textAnchor: "middle", transform: "translateX(-20px)"}}>{value}</text>
+                        <text key={value} stroke="currentColor" style={{fontSize: "10px", textAnchor: "middle", transform: "translateX(-20px)"}}>{value}</text>
                     </g>
                 ))}
             </>

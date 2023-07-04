@@ -18,13 +18,13 @@ export default function Hamburger({ content }) {
             <div className={isActiveHamb ? styles.hamburger_menu_active : styles.hamburger_menu}>
                 <button className={styles.hamburger_close} onClick={() => setIsActiveHamb(false)}></button>
                 <div className={styles.hamburger_menu_item}>
-                    <Link href={'https://essays.rafalves.com/en'} hrefLang='en'>Blog</Link>
+                    <Link href={'https://essays.rafalves.com/en'} hrefLang='en' target='_blank'>Blog</Link>
                 </div>
                 <div className={styles.hamburger_menu_item}>
-                    <Link href={'https://github.com/raffallves'}>Github</Link>
+                    <Link href={'https://github.com/raffallves'} target='_blank'>Github</Link>
                 </div>
                 <div className={styles.hamburger_menu_item}>
-                    <Link href={'https://linkedin.com/in/raffallves'}>LinkedIn</Link>
+                    <Link href={'https://linkedin.com/in/raffallves'} target='_blank'>LinkedIn</Link>
                 </div>
                 <div className={styles.hamburger_menu_item}>
                     {content.nav.menu.lang}

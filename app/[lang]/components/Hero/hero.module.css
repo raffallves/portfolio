@@ -219,11 +219,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .hero_img_wrapper path {
-    fill: rgb(var(--background-rgb));
-  }
 
-  .hero_img_wrapper circle {
+  .hero_img_wrapper > svg mask circle {
     fill: rgb(var(--text-color-rgb));
   }
 }

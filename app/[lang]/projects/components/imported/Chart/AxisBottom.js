@@ -64,7 +64,7 @@ export default function AxisBottom({ domain, range, scaleType }) {
             {ticks.map(({ value, xOffset }) => (
                 <g key={value} transform={`translate(${xOffset}, 0)`}>
                     <line y2="6" stroke="currentColor"/>
-                    <text key={value} style={{fontSize: "10px", textAnchor: "middle", transform: "translateY(20px)"}}>{
+                    <text key={value} stroke="currentColor" style={{fontSize: "10px", textAnchor: "middle", transform: "translateY(20px)"}}>{
                         scaleType === "time" ? 
                             !value ? '' : parseTime(value) 
                         : value 

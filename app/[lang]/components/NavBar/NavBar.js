@@ -19,13 +19,13 @@ export default async function NavBar({ lang }) {
                     <Logo/>
                 </Link>
                 <div className={styles.social}>
-                    <Link href={'https://essays.rafalves.com/en'}>
+                    <Link href={'https://essays.rafalves.com/en'} target='_blank' hrefLang='en'>
                         <BlogIcon />
                     </Link>
-                    <Link href={'https://github.com/raffallves'}>
+                    <Link href={'https://github.com/raffallves'} target='_blank'>
                         <GithubIcon />
                     </Link>
-                    <Link href={'https://linkedin.com/in/raffallves'}>
+                    <Link href={'https://linkedin.com/in/raffallves'} target='_blank'>
                         <LinkedinIcon />
                     </Link>
                     <Languages />

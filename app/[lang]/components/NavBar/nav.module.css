@@ -41,13 +41,13 @@
 
 @media (prefers-color-scheme: dark) {
   .header {
-    background-color: rgb(var(--text-color-rgb));
+    background-color: rgb(var(--background-rgb));
   }
   .nav > svg path {
     stroke: rgb(var(--background-rgb));
   }
 
-  .social path {
+  .social > svg path {
     fill: rgb(var(--background-rgb));
   }
 }

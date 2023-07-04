@@ -39,7 +39,7 @@ export default function LineChart() {
         <div ref={ref} style={{height: 350}}>
             <svg width={dimensions.width} height={dimensions.height}>
                 <g transform={`translate(${[dimensions.marginLeft, dimensions.marginTop].join(',')})`}>
-                    <path d={linePath(data)} fill='none' stroke='#1b355c' strokeWidth={1} />
+                    <path d={linePath(data)} fill='none' stroke='#1767de' strokeWidth={1} />
                     <g transform={`translate(${[
                         0,
                         0
