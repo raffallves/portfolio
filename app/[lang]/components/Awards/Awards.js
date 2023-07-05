@@ -7,7 +7,7 @@ export default async function Awards({ lang }) {
         <section className={styles.awards_wrapper}>
             <h3 className={styles.awards_title}>{content.awards.title}</h3>
             {content.awards.awardStack.map(award => (
-                <div>
+                <div key={award.title}>
                     <h4 className={styles.award_title}>{award.title}</h4>
                     <p>{award.description}</p>
                 </div>

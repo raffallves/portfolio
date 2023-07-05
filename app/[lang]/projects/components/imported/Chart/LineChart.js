@@ -25,7 +25,7 @@ const data = [
 
 export default function LineChart() {
     const [ref, dimensions] = useChartDimensions({
-        marginLeft: 30,
+        marginLeft: 60,
         marginRight: 40
     })
 

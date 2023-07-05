@@ -10,9 +10,6 @@ export function useChartDimensions(settings) {
     
     const [width, setWidth] = useState(0)
     const [height, setHeight] = useState(0)
-
-    // If height and width were specified in the settings, use those
-    if (dimensions.width && dimensions.height) return [ref, dimensions]
     
     useEffect(() => {
         const element = ref.current
@@ -40,7 +37,10 @@ export function useChartDimensions(settings) {
         resizeObserver.observe(element)
 
         return () => resizeObserver.unobserve(element)
-    }, [])
+    }, [height, width])
+
+    // If height and width were specified in the settings, use those
+    if (dimensions.width && dimensions.height) return [ref, dimensions]
 
     // Run combineDimensions again with the new values
     const newSettings = combineDimensions({

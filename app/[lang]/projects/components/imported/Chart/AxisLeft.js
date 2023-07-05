@@ -2,77 +2,57 @@
 import { scaleLinear, scaleBand } from 'd3-scale'
 import { useMemo } from 'react'
 
-export default function AxisLeft({domain=[100, 0], range=[10, 190], scale="linear"}) {
-    if (scale === "linear") {
-        // Sets number of ticks
-        const ticks = useMemo(() => {
-            const yScale = scaleLinear().domain(domain).range(range)
-            const height = range[1] - range[0]
-            const pixelsPerTick = 30
-            const numberOfTicksTarget = Math.max(1, Math.floor(height / pixelsPerTick))
+export default function AxisLeft({domain=[100, 0], range=[10, 190], scaleType="linear"}) {
 
-            return yScale.ticks(numberOfTicksTarget).map(value => ({
-                value,
-                yOffset: yScale(value)
-            }))
-        }, [domain.join("-"), range.join("-")])
+    const axisTicks = useMemo(() => {
+        if (scaleType === 'money') {
+            const scale = scaleLinear().domain(domain).range(range);
+            
+            // This part helps to set the number of ticks in a given axis depending on its height
+            const height = range[1] - range[0];
+            const pixelsPerTick = 30;
+            const numberOfDesiredTicks = Math.max(1, Math.floor(height / pixelsPerTick));
+    
+            // Returns an object for every value in the domain with the tick's coordinate offset
+            return scale.ticks(numberOfDesiredTicks).map(val => ({
+                val,
+                offset: scale(val)
+            }));
+        } else {
+            const scale = scaleLinear().domain(domain).range(range);
+    
+            // Filter to remove non-integer numbers
+            const desiredTicks = scale.ticks().filter(tick => Number.isInteger(tick));
+    
+            // Returns an object for every value in the domain with the tick's coordinate offset
+            return desiredTicks.map(val => ({
+                val,
+                offset: scale(val)
+            }));
+        }
+    }, [domain, range, scaleType])
+    
+    return (
+        <>
+            <path d={[
+                "M", -6, range[0],
+                "h", 6,
+                "V", range[1],
+                "h", -6
+            ].join(' ')}
+            fill='none'
+            stroke='currentColor'/>
+            {axisTicks.map(({ val, offset }) => {
+                if (scaleType === 'money') {
+                    val = `R$ ${val}`
+                }
 
-        return (
-            <>
-                <path d={[
-                    "M", -6, range[0],
-                    "h", 6,
-                    "V", range[1],
-                    "h", -6
-                ].join(" ")}
-                fill="none"
-                stroke="currentColor"/>
-                {ticks.map(({ value, yOffset }) => (
-                    <g key={value} transform={`translate(0, ${yOffset})`}>
-                        <line x2="-6" stroke="currentColor"/>
-                        <text key={value} stroke="currentColor" style={{fontSize: "10px", textAnchor: "middle", transform: "translateX(-20px)"}}>{value}</text>
+                return (
+                    <g key={val} transform={`translate(0, ${offset})`}>
+                        <line x2="-6" stroke='currentColor'/>
+                        <text key={val} style={{ fontSize: '10px', textAnchor: 'middle', transform: `translateX(-40px)`}}>{val}</text>
                     </g>
-                ))}
-            </>
-        )
-    } else if (scale === "band") {
-        // Sets number of ticks
-        const ticks = useMemo(() => {
-            const yScale = scaleBand()
-                .domain(domain)
-                .range(range)
-                .paddingInner(0.3)
-                .paddingOuter(0.4)
-                .align(0.5)
-
-            return domain.map(value => ({
-                value,
-                yOffset: yScale(value)
-            }))
-        }, [domain.join("-"), range.join("-")])
-
-        return (
-            <>
-                <path d={[
-                    "M", -6, range[0],
-                    "h", 6,
-                    "V", range[1],
-                    "h", -6
-                ].join(" ")}
-                fill="none"
-                stroke="currentColor"/>
-                {ticks.map(({ value, yOffset }) => (
-                    <g key={value} transform={`translate(0, ${yOffset})`}>
-                        <line x2="-6" stroke="currentColor"/>
-                        <text key={value} 
-                        style={{
-                            fontSize: "10px", 
-                            textAnchor: "middle",
-                            transform: "rotate(-45deg) translateX(-35px)"
-                        }}>{value}</text>
-                    </g>
-                ))}
-            </>
-        )
-    }
+            )})}
+        </>
+    )
 }

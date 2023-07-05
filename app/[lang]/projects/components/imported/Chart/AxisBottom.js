@@ -49,7 +49,7 @@ export default function AxisBottom({ domain, range, scaleType }) {
             }))
         }
         
-    }, [domain.join("-"), range.join("-")])
+    }, [domain, range, scaleType])
 
     return (
         <>
