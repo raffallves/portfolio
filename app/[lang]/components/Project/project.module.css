@@ -71,6 +71,17 @@
     }
 }
 
+/* Extremely Small Mobile */
+@media (max-width: 500px) {
+    .highlight_button {
+        margin-block-start: 1em;
+    }
+
+    .project_tech {
+        justify-content: flex-start;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     .highlight_button {
         background-color: rgb(var(--text-color-rgb));

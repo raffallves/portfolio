@@ -15,7 +15,10 @@ export default function Hamburger({ content }) {
                 <HamburgerIcon />
             </button>
             <div className={isActiveHamb ? styles.hamburger_menu_active : styles.hamburger_menu}>
-                <button className={styles.hamburger_close} onClick={() => setIsActiveHamb(false)}></button>
+                <button 
+                className={styles.hamburger_close} 
+                onClick={() => setIsActiveHamb(false)}
+                aria-label='Close Menu'></button>
                 <div className={styles.hamburger_menu_item}>
                     <Link href={'https://essays.rafalves.com/en'} hrefLang='en' target='_blank'>Blog</Link>
                 </div>

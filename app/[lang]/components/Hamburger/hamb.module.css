@@ -67,7 +67,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .hamburger rect {
-        fill: rgb(var(--background-rgb));
-    }
+  .hamburger_menu_active {
+    background-color: rgb(var(--background-rgb));
+    color: rgb(var(--text-color-rgb));
+  }
+
+  .hamburger_close {
+    color: rgb(var(--text-color-rgb));
+  }
 }
