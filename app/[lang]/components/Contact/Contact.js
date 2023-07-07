@@ -8,9 +8,9 @@ export default async function Contact({ lang }) {
         <section className={styles.contact_wrapper}>
             <h3 className={styles.contact_title}>{content.contact.title}</h3>
             <p>{content.contact.text}</p>
-            <Link href={'mailto:rafael@rafalves.com'} rel='noopener noreferrer'>
+            <a href={'mailto:rafael@rafalves.com'} rel='noopener noreferrer'>
                 <button className={styles.contact_button}>{content.contact.button}</button>
-            </Link>
+            </a>
         </section>
     )
 }
