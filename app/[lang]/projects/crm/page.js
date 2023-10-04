@@ -1,4 +1,6 @@
 import ChartsHighlight from "../components/highlights/ChartsHighlight/ChartsHighlight"
+import CRMArchitectureHighlight from "../components/highlights/crmArchitectureHighlight/crmArchitectureHighlight"
+import CRMDevelopmentHighlight from "../components/highlights/crmDevelopmentHighlight/crmDevelopmentHighlight"
 import { getContent } from '../content'
 
 export async function generateStaticParams() {
@@ -21,6 +23,8 @@ export default async function CRM({ params: { lang } }) {
             <h1>{content.crm.title}</h1>
             <p>{content.crm.description}</p>
             <ChartsHighlight content={content.crm.chart}/>
+            <CRMArchitectureHighlight content={content.crm.architecture}/>
+            <CRMDevelopmentHighlight content={content.crm.development}/>
         </>
     )
 }

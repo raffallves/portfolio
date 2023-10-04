@@ -27,6 +27,19 @@
             "p3": "Uma maneira segura de se remediar este problema é cuidar dos cálculos com a D3.js — transformando dados em coordenadas dimensionais — e deixar a responsabilidade de renderização nas mãos da React. Essa é a abordagem que eu escolhi seguir, e é como criei gráficos como o que se encontra abaixo:",
             "p4": "Este usa dados mockados, mas o que está sendo utilizado na versão de produção da aplicação obviamente precisa buscá-los de um servidor (uma API REST que foi implementada por mim também).",
             "p5": "Um problema desta abordagem é que muitas das funções auxiliares da biblioteca D3.js que dependem do acesso direto ao DOM têm que ser escritas do zero, como a função de geração eixos. Felizmente, não é algo muito difícil de se fazer. Para isso utilizei um gancho que conta com a API do ResizeObserver — ou sua versão em polyfill — para calcular as dimensões internas e externas do gráfico automaticamente, e depois a distância e as dimensões do eixo são derivadas do output do ResizeObserver."
+        },
+        "architecture": {
+            "h2": "Arquitetura",
+            "p1": "Para se ter um código com mais escalabilidade e manutenibilidade, eu implementei os conceitos da arquitetura Clean Code no back end.",
+            "p2": "Separar as diferentes funcionalidades dentro do código em diferentes camadas que comunicam-se através de interfaces faz com que toda a estrutura seja muito mais maleável e desacoplada.",
+            "p3": "Na imagem acima, é possível ver o princípio de inversão de dependência em ação.",
+            "p4": "A parte do código de maior nível de abstração — o filtro de contatos e pedidos — é separada da implementação da base de dados com o padrão de design repositório. As classes abstratas do Typescript foram essenciais para criar as interfaces de repositório que interagem com os controllers e são implementadas pelas instâncias dos modelos da base de dados.",
+            "p5": "Essa arquitetura também ajudou a escrever código mais fácil de testar, já que ela separa perfeitamente todos os diferentes aspectos da aplicação."
+        },
+        "development": {
+            "h2": "Desenvolvimento",
+            "p1": "Foi necessário um certo esforço para configurar o ambiente de desenvolvimento de maneira adequada. Os testes de ponta a ponta foram cuidadosamente planejados para imitar o ambiente de produção utilizando a biblioteca Supertest — que permite os testes de rotas HTTP — juntamente com o Jest para lidar com testes de rotas do Express.js e o Docker para espelhar a base de dados MySQL do ambiente de produção em um container local.",
+            "p2": "Outra aspecto interessante do processo de desenvolvimento é a pipeline de integração CI/CD que, com a ajuda do Github Actions, roda todos os testes da aplicação a cada novo commit e, se os resultados dos testes forem todos verdes, automaticamente faz o deploy dessa nova versão ao ambiente App Engine da GCP que hospeda o servidor da aplicação."
         }
     }
 }

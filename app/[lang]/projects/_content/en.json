@@ -26,7 +26,20 @@
             "p2": "The challenge with using D3.js with React is that they both need control of the DOM to do their thing. One simple workaround would be to fill the code with various useRef hooks, but that would limit React’s ability to update what’s rendered on screen.",
             "p3": "A safe compromise is to let D3.js handle the calculations — transforming data into dimensional coordinates — and leave the rendering responsibility to React. This is the approach I chose to follow, and it’s how I created charts such as the one below:",
             "p4": "That one uses mocked data, but the one that’s used in the production app obviously needs to fetch it from a server API (a REST API that I implemented as well).",
-            "p5": "One issue with this approach is that a lot of the helper functions from the D3.js library which depend on direct access to the DOM have to be written from scratch, like the axis generator function. Thankfully, it's not such a hard thing to do. I used a hook that relies on the ResizeObserver API — or a polyfill version of it — to calculate the chart’s inner and outer dimensions automatically, and then the axis range and dimensions are derived from the ResizeObserver output."
+            "p5": "One issue with this approach is that a lot of the helper functions from the D3.js library which depend on direct access to the DOM have to be rewritten from scratch, like the axis generator function. Thankfully, it's not such a hard thing to do. I used a hook that relies on the ResizeObserver API — or a polyfill version of it — to calculate the chart’s inner and outer dimensions automatically, and then the axis range and dimensions are derived from the ResizeObserver output."
+        },
+        "architecture": {
+            "h2": "Architecture",
+            "p1": "In order to have a more scalable and maintainable code, I implemented the Clean Code Architecture concepts on the back end.",
+            "p2": "Having the different concerns inside the codebase be separated into different layers that communicate with one another through interfaces makes the whole structure much more malleable and decoupled.",
+            "p3": "What is shown in the picture above is the dependency inversion principle in action.",
+            "p4": "The highest-level of abstraction inside the code — mainly, filtering contacts and orders data — is separated from database implementation via the repository design pattern. I leveraged Typescript’s abstract classes to create the repository interfaces that interact with the controllers and are implemented by the database model instances.",
+            "p5": "This architecture also helped with writing more testable code since it separates the concerns nicely."
+        },
+        "development": {
+            "h2": "Development",
+            "p1": "The development environment took a bit of effort to be adequately configured. The end-to-end test suite was carefully planned to mimic the production environment by using the Supertest library — which allows for HTTP route testing — on top of Jest to handle the Express.js routes tests and Docker to mirror the production MySQL database in a local container.",
+            "p2": "Another interesting part about the development process is the CI/CD pipeline that leverages Github Actions to test the entire application on every new commit and, if the test results all return green, automatically deploy the new version to the GCP’s App Engine runtime that hosts the production server of the application."
         }
     }
 }
